@@ -1,3 +1,45 @@
 [build-system]
 requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "cell2sentence"
+version = "1.2.0"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    # Core ML
+    "torch",
+    "transformers",
+    "datasets",
+    "accelerate",
+    # Single-cell
+    "anndata",
+    "scanpy",
+    # Data science
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "tqdm",
+    # Data download
+    "gdown",
+    # Notebooks
+    "jupyterlab",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pylint",
+]
+docs = [
+    "sphinx",
+    "sphinx-rtd-theme",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json"]
