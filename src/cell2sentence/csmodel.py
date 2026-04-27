@@ -213,7 +213,7 @@ class CSModel():
             data_collator=data_collator,
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
-            tokenizer=self.tokenizer
+            processing_class=self.tokenizer
         )
         trainer.train()
         print(f"Finetuning completed. Updated model saved to disk at: {output_dir}")
